@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Estudando VueJs lista de to_do</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- Inicio Lista de Afazeres-->
+<main id="todolist">
+  <h1>
+     Lista de Afazeres
+    <span>Faça as coisas, um item de cada vez.</span>
+  </h1>
+
+  <template v-if="todo.length">
+    <transition-group name="todolist" tag="ul">
+      <li v-for="item in todoByStatus" v-bind:class="item.done ? 'done' : ''" v-bind:key="item.id">
+        <span class="label">{{item.label}}</span>
+        <div class="actions">
+          <button class="btn-picto" type="button" v-on:click="markAsDoneOrUndone(item)" v-bind:aria-label="item.done ? 'Undone' : 'Done'" v-bind:title="item.done ? 'Undone' : 'Done'">
+            <i aria-hidden="true" class="material-icons">{{ item.done ? 'check_box' : 'check_box_outline_blank' }}</i>
+          </button>
+          <button class="btn-picto" type="button" v-on:click="deleteItemFromList(item)" aria-label="Delete" title="Delete">
+            <i aria-hidden="true" class="material-icons">delete</i>
+          </button>
+        </div>
+      </li>
+    </transition-group>
+    <togglebutton 
+                  label="Mover itens concluídos ao final?"
+                  name="todosort"
+                  v-on:clicked="clickontoogle"/>
+  </template>
+  <p v-else class="emptylist">Sua lista de tarefas esta vazia.</p>
+
+  <form name="newform" v-on:submit.prevent="addItem">
+    <label for="newitem">Adicione uma tarefa</label>
+    <input type="text" name="newitem" id="newitem" v-model="newitem">
+    <button type="submit">Add item</button>
+  </form>
+</main>
+<!-- Parcial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
