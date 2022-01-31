@@ -1,4 +1,4 @@
-alert ('Obrigado por avaliar meu projeto, a inspiração partiu de uma video aula do youtube, pelas as possibilidade e facilidades que o Framework oferecem, e uma vontatade infinita de aprender e enteder o Vue.js mesmo que ainda não seja fluente em Js,  porem as bibliotécas tem me ajudado a superar a falta de conhecimento imediato. Mais uma passo dado');
+alert ('Obrigado por avaliar meu projeto, a inspiração partiu de uma video aula do youtube, pelas as possibilidade e facilidades que o Framework oferecem, e uma vontatade infinita de aprender e enteder o Vue.js mesmo que ainda não seja fluente em Js,  porem as bibliotécas tem me ajudado a superar a falta de conhecimento imediato. Enfim mais uma passo dado.');
 
 Vue.component('togglebutton', {
   props: ['label', 'name'],
