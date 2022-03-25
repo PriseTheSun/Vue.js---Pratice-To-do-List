@@ -1,5 +1,5 @@
 # Vue.js-Pratice-To-do-List
-Praticando vue.js 
+Praticando vue.js (https://praticandovuejs.netlify.app/)
 
 Praticando vue.js criando uma lista de to-do no formato C-R-U-D. Utilizei as técnologias HTML, CSS, JAVASCRIPT, VUE.JS importado via CDN V2vue Version.
 
